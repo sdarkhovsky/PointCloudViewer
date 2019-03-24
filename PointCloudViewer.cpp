@@ -294,7 +294,7 @@ void refresh_display_lists() {
         glBegin(GL_POINTS);
         glColor3ub((GLubyte)it->Clr(0), (GLubyte)it->Clr(1), (GLubyte)it->Clr(2));
         glVertex3f(it->X(0), it->X(1), it->X(2));
-        cout << "x,y,z,r,g,b:" << it->X(0) << it->X(1) << it->X(2) << it->Clr(0) << (GLubyte)it->Clr(1) << (GLubyte)it->Clr(2) << endl;
+//        cout << "x,y,z,r,g,b:" << it->X(0) << it->X(1) << it->X(2) << it->Clr(0) << it->Clr(1) << it->Clr(2) << endl;
         glEnd();
 
         if (it->Vector != Vector3f::Zero()) {
