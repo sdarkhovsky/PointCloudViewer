@@ -335,6 +335,7 @@ GLvoid initializeGL(GLsizei width, GLsizei height)
 
 GLvoid drawScene(GLvoid)
 {
+    // cout << "drawScene" << endl;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glPointSize(gl_point_size);
@@ -542,6 +543,7 @@ void mouse_motion_func(int x, int y)
                 max_visible(0) = x;
             if (y > max_visible(1))
                 max_visible(1) = y;
+            glutPostRedisplay();
         }
     } 
     else 
@@ -552,6 +554,7 @@ void mouse_motion_func(int x, int y)
             translation = -translation*translate_camera_speed;
             eye_pnt = eye_pnt + translation;
             lookat_pnt = lookat_pnt + translation;
+            glutPostRedisplay();
         }
         else 
         if (!mouse_right_button_up) {
@@ -567,6 +570,7 @@ void mouse_motion_func(int x, int y)
                 //Matrix3f rotation = Matrix3f::Identity() + ang_vel_hat*sin(ang_vel_val) / ang_vel_val + ang_vel_hat*ang_vel_hat / (ang_vel_val*ang_vel_val)*(1 - cos(ang_vel_val));
                 Matrix3f rotation = Matrix3f::Identity() + ang_vel_hat; // approximation for small ang_vel_val
                 eye_pnt = lookat_pnt + rotation*(eye_pnt - lookat_pnt);
+                glutPostRedisplay();
             }
         }
     }
@@ -584,6 +588,7 @@ void mouse_wheel_func( int wheel, int direction, int x, int y ) {
         translation = translation*translate_camera_speed;
         eye_pnt = eye_pnt + translation;
         lookat_pnt = lookat_pnt + translation;
+        glutPostRedisplay();
     }
 }
 
