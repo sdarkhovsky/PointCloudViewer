@@ -63,12 +63,12 @@ namespace pcv {
 
             for (int i = 0; i < 3; i++) {
                 linestream >> point.X(i);
-                cout << "X=" << point.X(i) << " i=" << i << endl;
+//                cout << "X=" << point.X(i) << " i=" << i << endl;
             }
 
             for (int i = 0; i < 3; i++) {
                 linestream >> point.Clr(i);
-                cout << "Clr=" << point.Clr(i) << " i=" << i << endl;                
+//                cout << "Clr=" << point.Clr(i) << " i=" << i << endl;                
             }
 
             point.Vector = Vector3f::Zero();
